@@ -1,0 +1,8 @@
+@import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100;1,100&display=swap');
+
+#app {
+  width: 100vw;
+  font-weight: normal;
+  font-family: 'Alumni Sans', sans-serif;
+}
