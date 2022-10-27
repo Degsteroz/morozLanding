@@ -1,5 +1,16 @@
 {
   "name": "morozlanding",
+  "prettier": {
+    "singleQuote": true
+  },
+  "overrides": [
+    {
+      "files": ".prettierrc.json",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ],
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -8,6 +19,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@vueuse/components": "^9.4.0",
     "vue": "^3.2.41"
   },
   "devDependencies": {
@@ -17,6 +29,8 @@
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "prettier": "^2.7.1",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
     "vite": "^3.1.8"
   }
 }
