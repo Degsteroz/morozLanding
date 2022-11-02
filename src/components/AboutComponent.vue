@@ -3,7 +3,7 @@
     <div class='about__content'>
       <div class='about__imageContainer'>
         <img
-          src='src/assets/images/about2.png'
+          src='../assets/images/about2.png'
           class='about__image'
           :class="{'--visible': isVisible}"
           alt=''
