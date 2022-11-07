@@ -9,6 +9,7 @@
   </div>
 </template>
 <script>
+import headerPicture from '@img/headerPictures.jpeg'
 export default {
   name: 'HeaderImage',
   mounted() {
@@ -26,7 +27,7 @@ export default {
     return {
       windowTop: 0,
       imageArray: [
-        'src/assets/images/headerPictures.jpeg',
+        headerPicture,
         'https://sun6-23.userapi.com/impg/lbdZQ8Ps76JMA-jTcc1q5Al5tPzI7Idmb6XvvQ/b5h6sjXUY7U.jpg?size=2560x1707&quality=96&sign=f87629e7dba381938fe5d1bf6fa296f6&type=album'
       ]
     }

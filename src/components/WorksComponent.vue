@@ -20,8 +20,11 @@
 </template>
 
 <script>
-
 import BaseImageCard from '@/components/BaseImageCard.vue'
+
+import workPicture1 from '@img/works/1.jpeg'
+import workBackground from '@img/worksBackground.jpeg'
+import headerPicture from '@img/headerPictures.jpeg'
 export default {
   name: 'WorksComponent',
   components: { BaseImageCard },
@@ -31,7 +34,7 @@ export default {
         {
           title: 'Album name',
           urls: [
-            'src/assets/images/works/1.jpeg',
+            workPicture1,
             // eslint-disable-next-line max-len
             'https://sun6-23.userapi.com/impg/lbdZQ8Ps76JMA-jTcc1q5Al5tPzI7Idmb6XvvQ/b5h6sjXUY7U.jpg?size=2560x1707&quality=96&sign=f87629e7dba381938fe5d1bf6fa296f6&type=album'
           ],
@@ -40,8 +43,8 @@ export default {
         {
           title: 'Album name',
           urls: [
-            'src/assets/images/worksBackground.jpeg',
-            'src/assets/images/works/1.jpeg'
+            workBackground,
+            workPicture1
           ],
           albumUrl: 'https://vk.com/album-204896907_286507131'
         },
@@ -50,7 +53,7 @@ export default {
           urls: [
             // eslint-disable-next-line max-len
             'https://sun6-23.userapi.com/impg/lbdZQ8Ps76JMA-jTcc1q5Al5tPzI7Idmb6XvvQ/b5h6sjXUY7U.jpg?size=2560x1707&quality=96&sign=f87629e7dba381938fe5d1bf6fa296f6&type=album',
-            'src/assets/images/headerPictures.jpeg',
+            headerPicture,
           ],
           albumUrl: 'https://vk.com/album-204896907_286507131'
         },
