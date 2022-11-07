@@ -43,11 +43,13 @@ const title = 'Обо мне'
   display: flex
   flex-direction: column
   align-items: center
+  justify-content: flex-end
   position: relative
 
   width: 100%
   background-color: #f8d549
   color: #181818
+  height: calc(100vh - 58px)
 
 .about__title
   font-size: 40px
