@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import profilePic from '@img/profileImg.jpeg'
 export default {
   name: 'BaseImageCard',
   props: {
@@ -34,7 +35,7 @@ export default {
   },
   data() {
     return {
-      profileImgUrl: 'src/assets/images/profileImg.jpeg',
+      profileImgUrl: profilePic,
       profileName: 'muamarvel',
       instagramUrl: 'https://www.instagram.com/muamarvel/'
     }
