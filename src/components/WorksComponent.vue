@@ -1,7 +1,7 @@
 <template>
   <div class='worksContainer'>
     <div class='worksContainer__background'>
-      <img src='src/assets/images/worksBackground.jpeg' class='background__image'/>
+      <img src='../assets/images/worksBackground.jpeg' class='background__image'/>
     </div>
 
     <div class='worksContainer__content'>
