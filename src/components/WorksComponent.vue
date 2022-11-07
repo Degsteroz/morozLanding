@@ -21,7 +21,7 @@
 
 <script>
 
-import BaseImageCard from './BaseImageCard.vue'
+import BaseImageCard from '@/components/BaseImageCard.vue'
 export default {
   name: 'WorksComponent',
   components: { BaseImageCard },
@@ -32,6 +32,7 @@ export default {
           title: 'Album name',
           urls: [
             'src/assets/images/works/1.jpeg',
+            // eslint-disable-next-line max-len
             'https://sun6-23.userapi.com/impg/lbdZQ8Ps76JMA-jTcc1q5Al5tPzI7Idmb6XvvQ/b5h6sjXUY7U.jpg?size=2560x1707&quality=96&sign=f87629e7dba381938fe5d1bf6fa296f6&type=album'
           ],
           albumUrl: 'https://vk.com/album-204896907_286507131'
@@ -47,6 +48,7 @@ export default {
         {
           title: 'Album name',
           urls: [
+            // eslint-disable-next-line max-len
             'https://sun6-23.userapi.com/impg/lbdZQ8Ps76JMA-jTcc1q5Al5tPzI7Idmb6XvvQ/b5h6sjXUY7U.jpg?size=2560x1707&quality=96&sign=f87629e7dba381938fe5d1bf6fa296f6&type=album',
             'src/assets/images/headerPictures.jpeg',
           ],
