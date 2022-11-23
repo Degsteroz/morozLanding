@@ -1,5 +1,5 @@
 <template>
-  <div class='headerContainer'>
+  <div class='headerContainer' id='home'>
     <div class='header__networks'>
       <div class='header__separator'/>
       <div class='linkContainer'>
@@ -23,12 +23,17 @@
       <h2 class="subtitle">{{ subtitle }}</h2>
       <h2 class="secondSubtitle">{{secondSubtitle}}</h2>
     </div>
+    <a href='#about' class='header__goDownButton'>
+      <img :src='arrowDown' alt='' class='networks__svg --noFilters'/>
+      Продолжить
+    </a>
   </div>
 </template>
 
 <script>
 import vkIcon from '@/assets/icons/vk.svg'
 import insIcon from '@/assets/icons/instagram.svg'
+import arrowDown from '@/assets/icons/arrowDown.svg'
 
 export default {
   data() {
@@ -38,6 +43,7 @@ export default {
       secondSubtitle: 'Я - твой будущий фотограф',
       vkIcon,
       insIcon,
+      arrowDown,
     }
   }
 }
@@ -50,9 +56,17 @@ export default {
   color: #ffffff
   font-weight: 900
 
+.header__centralBlock
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+
 .header__MessageContainer
-  width: 100vw
-  height: calc(100vh - 80px)
+  width: 100%
+  height: calc(100vh - 180px)
+  @media screen and (max-width: 480px)
+    height: 400px
 
   display: grid
   grid-template-columns: 1fr
@@ -108,6 +122,9 @@ export default {
   width: 30px
   margin-right: 10px
   filter: invert(1)
+  &.--noFilters
+    margin-right: 0
+    filter: none
 
 .linkContainer
   display: flex
@@ -121,4 +138,27 @@ export default {
   transition: width 0.2s ease-in-out
   &:hover
     width: 300px
+
+.header__goDownButton
+  position: absolute
+  font-size: 30px
+  border-radius: 20px
+  padding: 5px
+  background: white
+  color: black
+  white-space: nowrap
+  line-height: 1
+
+  width: 40px
+  overflow: hidden
+
+  bottom: 10px
+  right: 50%
+  transform: translate(50%, 0)
+  transition: width 0.5s ease-in-out
+  align-items: center
+
+  &:hover
+    width: 180px
+
 </style>

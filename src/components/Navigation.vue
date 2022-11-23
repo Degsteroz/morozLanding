@@ -19,6 +19,10 @@ export default {
     return {
       links: [
         {
+          title: 'Home',
+          href: '#home'
+        },
+        {
           title: 'About',
           href: '#about'
         },

@@ -1,5 +1,5 @@
 <template>
-  <div class='contactContainer'>
+  <div class='contactContainer' id='contacts'>
     <img src='https://sun9-88.userapi.com/impf/c851228/v851228137/6326e/b0M8C0y46Ek.jpg?size=2560x1707&quality=96&sign=a5125a2cbf3a378c349a1d7770274697&type=album'>
   </div>
 </template>
