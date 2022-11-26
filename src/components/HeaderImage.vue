@@ -10,6 +10,7 @@
 </template>
 <script>
 import headerPicture from '@img/headerPictures.jpeg'
+import headerPicture1 from '@img/headerPictures2.jpeg'
 export default {
   name: 'HeaderImage',
   mounted() {
@@ -28,7 +29,7 @@ export default {
       windowTop: 0,
       imageArray: [
         headerPicture,
-        'https://sun6-23.userapi.com/impg/lbdZQ8Ps76JMA-jTcc1q5Al5tPzI7Idmb6XvvQ/b5h6sjXUY7U.jpg?size=2560x1707&quality=96&sign=f87629e7dba381938fe5d1bf6fa296f6&type=album'
+        headerPicture1,
       ]
     }
   },
@@ -50,5 +51,17 @@ export default {
 }
 .headerImage {
   width: 100vw;
+}
+@media screen and (max-width: 480px) {
+  .headerImageContainer {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+  }
+  .headerImage {
+    height: 100%;
+    width: auto;
+    filter: brightness(0.5);
+  }
 }
 </style>

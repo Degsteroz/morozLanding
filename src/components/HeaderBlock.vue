@@ -55,6 +55,9 @@ export default {
   opacity: 0.8
   color: #ffffff
   font-weight: 900
+  @media screen and (max-width: 480px)
+    font-weight: bold
+    padding: 30px
 
 .header__centralBlock
   width: 100%
@@ -65,14 +68,14 @@ export default {
 .header__MessageContainer
   width: 100%
   height: calc(100vh - 180px)
-  @media screen and (max-width: 480px)
-    height: 400px
-
   display: grid
   grid-template-columns: 1fr
   grid-template-rows: auto 30px auto 1fr
   justify-content: flex-end
   text-align: right
+
+  @media screen and (max-width: 480px)
+    grid-template-rows: 50% 10px 150px 150px
 
 .title
   font-size: 80px
@@ -81,6 +84,9 @@ export default {
   animation: photoAppear 0.8s forwards
   animation-delay: 0.8s
   opacity: 0
+  @media screen and (max-width: 480px)
+    align-self: flex-end
+    font-size: 40px
 
 .subtitle
   font-size: 80px
@@ -89,6 +95,8 @@ export default {
   animation: photoAppear 0.8s forwards
   animation-delay: 1.6s
   opacity: 0
+  @media screen and (max-width: 480px)
+    font-size: 40px
 
 .secondSubtitle
   font-size: 110px
@@ -97,6 +105,8 @@ export default {
   animation: photoAppear 0.8s forwards
   animation-delay: 2.4s
   opacity: 0
+  @media screen and (max-width: 480px)
+    font-size: 40px
 
 @keyframes photoAppear
   from
@@ -138,6 +148,8 @@ export default {
   transition: width 0.2s ease-in-out
   &:hover
     width: 300px
+    @media screen and (max-width: 480px)
+      width: 30px
 
 .header__goDownButton
   position: absolute
@@ -160,5 +172,8 @@ export default {
 
   &:hover
     width: 180px
+
+  @media screen and (max-width: 480px)
+    bottom: 20px
 
 </style>
