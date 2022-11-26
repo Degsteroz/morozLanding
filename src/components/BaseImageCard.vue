@@ -38,17 +38,13 @@ export default {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  height: 300px;
+  height: 400px;
   position: relative;
 }
 .wrapper__image {
-  height: 300px;
+  height: 400px;
   filter: grayscale(1);
   transition: filter 1s ease-in-out, opacity 0.4s ease-in-out;
-  opacity: 0.7;
-  &:hover {
-    opacity: 1
-  }
 }
 
 </style>

@@ -48,7 +48,7 @@ export default {
   padding: 10px 0
   color: #222222
   font-size: 40px
-  justify-content: flex-end
+  justify-content: center
   align-items: center
   overflow: hidden
 
