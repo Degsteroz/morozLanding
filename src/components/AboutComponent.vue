@@ -3,13 +3,13 @@
     <div class='about__content'>
       <div class='about__imageContainer'>
         <img
-          src='../assets/images/about2.png'
+          :src='ABOUT_PHOTO'
           class='about__image'
           :class="{'--visible': isVisible && (slideIndex < 4)}"
           alt=''
         />
         <img
-          src='../assets/images/about.png'
+          :src='ABOUT_PHOTO2'
           class='about__image'
           :class="{'--visible': isVisible && (slideIndex >= 4)}"
           alt=''
@@ -49,8 +49,10 @@
 </template>
 
 <script setup>
-import { vElementVisibility } from '@vueuse/components'
 import { ref } from 'vue'
+
+import { vElementVisibility } from '@vueuse/components'
+import { ABOUT_PHOTO, ABOUT_PHOTO2 } from '@/pageData'
 
 let interval = null
 const isVisible = ref(false)
@@ -125,8 +127,8 @@ const paragraphs = [
   position: relative
 
   width: 100%
-  background-color: #f8d549
-  color: #181818
+  background-color: var(--yellow)
+  color: var(--black)
   height: calc(100vh - 58px)
 
 .about__content

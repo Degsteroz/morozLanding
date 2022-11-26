@@ -9,8 +9,7 @@
   </div>
 </template>
 <script>
-import headerPicture from '@img/headerPictures.jpeg'
-import headerPicture1 from '@img/headerPictures2.jpeg'
+import { HEADER_IMAGE, HEADER_IMAGE2 } from '@/pageData'
 export default {
   name: 'HeaderImage',
   mounted() {
@@ -28,8 +27,8 @@ export default {
     return {
       windowTop: 0,
       imageArray: [
-        headerPicture,
-        headerPicture1,
+        HEADER_IMAGE,
+        HEADER_IMAGE2,
       ]
     }
   },

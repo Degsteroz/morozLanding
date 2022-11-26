@@ -46,7 +46,7 @@ export default {
   display: flex
   flex-direction: row
   padding: 5px 0
-  background-color: #23395B
+  background-color: var(--darkBlue)
   gap: 40px
   position: sticky
   top: 0
@@ -54,7 +54,7 @@ export default {
   justify-content: center
 
 .navigation__link
-  color: #f2f2f2
+  color: var(--white)
   font-size: 30px
   font-weight: 700
   transition: color 0.3s ease-in-out

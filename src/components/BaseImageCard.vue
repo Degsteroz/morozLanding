@@ -1,38 +1,17 @@
 <template>
   <div class='componentContainer' :data-left='left'>
-    <a class='imageWrapper' :href='albumUrl' target='_blank'>
-      <img :src='url' :key='url' class='wrapper__image'/>
-    </a>
+    <div class='imageWrapper' >
+      <img :src='image' :key='image' class='wrapper__image'/>
+    </div>
   </div>
 </template>
 
 <script>
-import profilePic from '@img/profileImg.jpeg'
 export default {
   name: 'BaseImageCard',
   props: {
-    title: {
-      type: String,
+    image: {
       required: true,
-    },
-    urls: {
-      type: Array[String],
-      required: true,
-    },
-    url: {
-      type: ImageData,
-      required: true,
-    },
-    albumUrl: {
-      type: String,
-      required: true,
-    }
-  },
-  data() {
-    return {
-      profileImgUrl: profilePic,
-      profileName: 'muamarvel',
-      instagramUrl: 'https://www.instagram.com/muamarvel/'
     }
   },
 }
@@ -48,7 +27,7 @@ export default {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   transition: all 1s ease-in-out;
   &:hover {
-   flex-basis: 500px;
+   flex-basis: 400px;
     .wrapper__image {
       filter: none;
     }
@@ -59,13 +38,17 @@ export default {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  height: 500px;
+  height: 300px;
   position: relative;
 }
 .wrapper__image {
-  height: 500px;
+  height: 300px;
   filter: grayscale(1);
-  transition: all 1s ease-in-out;
+  transition: filter 1s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1
+  }
 }
 
 </style>
