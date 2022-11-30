@@ -1,12 +1,30 @@
 <template>
-  <div class='componentContainer' :data-left='left'>
+  <div
+    class='componentContainer'
+    @click='changeModalStateView'
+  >
     <div class='imageWrapper' >
-      <img :src='image' :key='image' class='wrapper__image'/>
+      <img
+        :src='FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX + image'
+        :key='image'
+        class='wrapper__image'
+      />
+      <BaseModal
+        v-if='showModal'
+        @click='changeModalStateView'
+      >
+        <img
+          class='wrapper__image__fullSize'
+          :src='FORMATTED_SCALED900_IMAGE_PREFIX + image'
+        />
+      </BaseModal>
     </div>
   </div>
 </template>
 
 <script>
+import { FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX, FORMATTED_SCALED900_IMAGE_PREFIX } from '@/pageData'
+import { defineAsyncComponent } from 'vue'
 export default {
   name: 'BaseImageCard',
   props: {
@@ -14,6 +32,22 @@ export default {
       required: true,
     }
   },
+  components: {
+    BaseModal: defineAsyncComponent(() => import('./BaseModal.vue'))
+  },
+  data() {
+    return {
+      FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX,
+      FORMATTED_SCALED900_IMAGE_PREFIX,
+      showModal: false
+    }
+  },
+  methods: {
+    changeModalStateView(e) {
+      e.stopPropagation()
+      this.showModal = !this.showModal
+    }
+  }
 }
 </script>
 
@@ -45,6 +79,9 @@ export default {
   height: 400px;
   filter: grayscale(1);
   transition: filter 1s ease-in-out, opacity 0.4s ease-in-out;
+}
+.wrapper__image__fullSize {
+  height: calc(100vh - 50px);
 }
 
 </style>

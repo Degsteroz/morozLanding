@@ -2,7 +2,7 @@
   <div class='worksContainer'>
     <div class='worksContainer__background'>
       <transition name="slide-fade">
-        <img :src='background' class='background__image' :key='background'/>
+        <img :src='imageSource' class='background__image' :key='background'/>
       </transition>
     </div>
     <div class='work__header'>Мои работы</div>
@@ -21,7 +21,7 @@
 
 <script>
 import BaseImageCard from '@/components/BaseImageCard.vue'
-import { WORK_PHOTO, WORK_BACKGROUND } from '@/pageData'
+import { WORK_PHOTO, WORK_BACKGROUND, FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX } from '@/pageData'
 export default {
   name: 'WorksComponent',
   components: { BaseImageCard },
@@ -34,6 +34,11 @@ export default {
   methods: {
     changeBackgroundImage(image) {
       this.background = image
+    }
+  },
+  computed: {
+    imageSource() {
+      return FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX + this.background
     }
   }
 }
