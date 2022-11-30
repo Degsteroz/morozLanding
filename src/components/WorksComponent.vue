@@ -2,7 +2,11 @@
   <div class='worksContainer'>
     <div class='worksContainer__background'>
       <transition name="slide-fade">
-        <img :src='imageSource' class='background__image' :key='background'/>
+        <img
+          :src='imageSource'
+          class='background__image'
+          :key='background'
+        />
       </transition>
     </div>
     <div class='work__header'>Мои работы</div>

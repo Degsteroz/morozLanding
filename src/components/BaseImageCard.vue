@@ -78,8 +78,6 @@ export default {
   flex: 1 1 150px ;
   flex-direction: column;
   overflow: hidden;
-  font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   transition: all 1s ease-in-out;
   &:hover {
    flex-basis: 400px;
@@ -100,6 +98,7 @@ export default {
   height: 400px;
   filter: grayscale(1);
   transition: filter 1s ease-in-out, opacity 0.4s ease-in-out;
+  cursor: pointer;
 }
 .wrapper__image__fullSize {
   height: calc(100vh - 50px);
