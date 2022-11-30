@@ -5,17 +5,21 @@
   >
     <div class='imageWrapper' >
       <img
-        :src='FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX + image'
+        :src='imageSrc'
         :key='image'
         class='wrapper__image'
+        alt='My work preview'
       />
       <BaseModal
         v-if='showModal'
-        @click='changeModalStateView'
+        @wheel.prevent
+        @touchmove.prevent
+        @scroll.prevent
       >
         <img
+          v-lazy="loaderConfig"
           class='wrapper__image__fullSize'
-          :src='FORMATTED_SCALED900_IMAGE_PREFIX + image'
+          alt='My work full size'
         />
       </BaseModal>
     </div>
@@ -23,8 +27,14 @@
 </template>
 
 <script>
-import { FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX, FORMATTED_SCALED900_IMAGE_PREFIX } from '@/pageData'
-import { defineAsyncComponent } from 'vue'
+import {
+  FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX,
+  FORMATTED_SCALED200_LOW_QUALITY_IMAGE_PREFIX,
+  FORMATTED_IMAGE_PREFIX,
+} from '@/pageData'
+
+import BaseModal from './BaseModal.vue'
+
 export default {
   name: 'BaseImageCard',
   props: {
@@ -33,19 +43,30 @@ export default {
     }
   },
   components: {
-    BaseModal: defineAsyncComponent(() => import('./BaseModal.vue'))
+    BaseModal
   },
   data() {
     return {
-      FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX,
-      FORMATTED_SCALED900_IMAGE_PREFIX,
-      showModal: false
+      showModal: false,
     }
   },
   methods: {
     changeModalStateView(e) {
       e.stopPropagation()
       this.showModal = !this.showModal
+    }
+  },
+  computed: {
+    loaderConfig() {
+      const { image } = this.$props
+      return {
+        src: FORMATTED_IMAGE_PREFIX + image,
+        loading: FORMATTED_SCALED200_LOW_QUALITY_IMAGE_PREFIX + image,
+        error: this.imageSrc,
+      }
+    },
+    imageSrc() {
+      return FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX + this.$props.image
     }
   }
 }
@@ -82,6 +103,21 @@ export default {
 }
 .wrapper__image__fullSize {
   height: calc(100vh - 50px);
+}
+img[lazy=loading] {
+  filter: blur(8px);
+}
+img[lazy=loaded] {
+  animation: appear 0.5s ease;
+}
+
+@keyframes appear {
+  from {
+    filter: blur(8px);
+  }
+  to {
+    filter: blur(0);
+  }
 }
 
 </style>

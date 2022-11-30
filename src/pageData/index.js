@@ -1,15 +1,31 @@
 const BASE_URL = 'https://res.cloudinary.com/dtecpsig5/image/upload/f_webp/'
 const CONFIG = {
+  scale200: 'c_scale,w_200/',
   scale700: 'c_scale,w_700/',
-  scale900: 'c_scale,w_900/',
+  scale1000: 'c_scale,w_1000/',
   lowQuality: 'q_50/',
+  blur: 'e_blur:2000/'
 }
 const DIRECTORY = 'moroz/'
 
 export const FORMATTED_IMAGE_PREFIX = BASE_URL + DIRECTORY
 export const FORMATTED_SCALED700_IMAGE_PREFIX = BASE_URL + CONFIG.scale700 + DIRECTORY
-export const FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX = BASE_URL + CONFIG.scale700 + CONFIG.lowQuality + DIRECTORY
-export const FORMATTED_SCALED900_IMAGE_PREFIX = BASE_URL + CONFIG.scale900 + DIRECTORY
+export const FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX = BASE_URL
+  + CONFIG.scale700
+  + CONFIG.lowQuality
+  + DIRECTORY
+
+export const FORMATTED_SCALED200_LOW_QUALITY_IMAGE_PREFIX = BASE_URL
+  + CONFIG.scale200
+  + CONFIG.lowQuality
+  + DIRECTORY
+export const FORMATTED_SCALED1000_IMAGE_PREFIX = BASE_URL + CONFIG.scale1000 + DIRECTORY
+
+export const FORMATTED_LOW_QUALITY_BLURRED_IMAGE_PREFIX = BASE_URL
+  + CONFIG.blur
+  + CONFIG.lowQuality
+  + CONFIG.scale700
+  + DIRECTORY
 
 export const HEADER_IMAGE = FORMATTED_IMAGE_PREFIX + 'headerPictures_pbzcx8.jpg'
 export const HEADER_IMAGE2 = FORMATTED_IMAGE_PREFIX + 'headerPictures2_c4cfhh.jpg'

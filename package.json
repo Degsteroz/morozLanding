@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "@vueuse/components": "^9.4.0",
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "vue3-lazyload": "^0.3.6"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
