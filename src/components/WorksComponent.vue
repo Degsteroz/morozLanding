@@ -6,6 +6,7 @@
           :src='imageSource'
           class='background__image'
           :key='background'
+          alt='Background picture'
         />
       </transition>
     </div>
@@ -18,6 +19,16 @@
         :key='image+index'
         :onmouseover='() => changeBackgroundImage(image)'
       />
+    </div>
+    <div class='worksContainer__content__mobile'>
+      <div class='content__scrollContainer'>
+        <BaseImageCard
+          v-for='(image, index) in albumsArray'
+          :image='image'
+          :key='image+index'
+          :onmouseover='() => changeBackgroundImage(image)'
+        />
+      </div>
     </div>
     <div class='navigationAnker' id='works'/>
   </div>
@@ -66,6 +77,10 @@ export default {
   display: flex
   top: 0
   left: 0
+  @media screen and (max-width: 480px)
+    width: 100vw
+    overflow: hidden
+    justify-content: center
 
 .slide-fade-enter-active
   opacity: 0
@@ -83,6 +98,9 @@ export default {
   -webkit-transition: all 3s ease
   transition: all 0.5s ease
   z-index: -1
+  @media screen and (max-width: 480px)
+    width: auto
+    height: 100vh
 
 .work__header
   font-size: 50px
@@ -95,6 +113,18 @@ export default {
   padding: 10px
   justify-content: center
   overflow: hidden
+  @media screen and (max-width: 480px)
+    display: none
+
+.worksContainer__content__mobile
+  display: none
+  @media screen and (max-width: 480px)
+    display: flex
+    overflow: scroll
+    width: 100vw
+.content__scrollContainer
+  display: flex
+  padding: 0 -20px
 
 .navigationAnker
   position: absolute
