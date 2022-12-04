@@ -13,33 +13,28 @@
     <div class='work__header'>Мои работы</div>
 
     <div class='worksContainer__content'>
-      <BaseImageCard
-        v-for='(image, index) in albumsArray'
-        :image='image'
-        :key='image+index'
-        :onmouseover='() => changeBackgroundImage(image)'
+      <AlbumComponent
+        :album='album'
+        :key='album.main'
+        v-for='album in albumsArray'
+        @mouseenter='() => changeBackgroundImage(album)'
       />
-    </div>
-    <div class='worksContainer__content__mobile'>
-      <div class='content__scrollContainer'>
-        <BaseImageCard
-          v-for='(image, index) in albumsArray'
-          :image='image'
-          :key='image+index'
-          :onmouseover='() => changeBackgroundImage(image)'
-        />
-      </div>
     </div>
     <div class='navigationAnker' id='works'/>
   </div>
 </template>
 
 <script>
-import BaseImageCard from '@/components/BaseImageCard.vue'
-import { WORK_PHOTO, WORK_BACKGROUND, FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX } from '@/pageData'
+import AlbumComponent from '@/components/AlbumComponent.vue'
+import {
+  WORK_PHOTO,
+  WORK_BACKGROUND,
+  FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX
+} from '@/pageData'
+
 export default {
   name: 'WorksComponent',
-  components: { BaseImageCard },
+  components: { AlbumComponent },
   data() {
     return {
       background: WORK_BACKGROUND,
@@ -48,14 +43,14 @@ export default {
   },
   methods: {
     changeBackgroundImage(image) {
-      this.background = image
+      this.background =  image.prefix + image.main
     }
   },
   computed: {
     imageSource() {
       return FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX + this.background
     }
-  }
+  },
 }
 </script>
 
@@ -111,10 +106,7 @@ export default {
   height: fit-content
   display: flex
   padding: 10px
-  justify-content: center
   overflow: hidden
-  @media screen and (max-width: 480px)
-    display: none
 
 .worksContainer__content__mobile
   display: none

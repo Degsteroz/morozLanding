@@ -1,13 +1,12 @@
 <template>
   <div
-    class='componentContainer'
+    class='imageCard__container'
     @click='changeModalStateView'
   >
-    <div class='imageWrapper' >
-      <img
-        :src='imageSrc'
-        :key='image'
-        class='wrapper__image'
+    <div class='imageCard__imageWrapper' >
+      <BaseImage
+        :image='imageSrc'
+        class='imageCard__preview'
         alt='My work preview'
       />
       <BaseModal
@@ -16,15 +15,14 @@
         @touchmove.prevent
         @scroll.prevent
       >
-        <img
-          v-lazy="loaderConfig"
+        <BaseImage
+          :image='image'
           class='wrapper__image__fullSize'
-          alt='My work full size'
         />
-        <img
-          :src='imageSrc'
+
+        <BaseImage
+          :image='image'
           class='wrapper__image__fullSize mobile'
-          alt='My work full size'
         />
       </BaseModal>
     </div>
@@ -32,13 +30,9 @@
 </template>
 
 <script>
-import {
-  FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX,
-  FORMATTED_SCALED200_LOW_QUALITY_IMAGE_PREFIX,
-  FORMATTED_IMAGE_PREFIX,
-} from '@/pageData'
 
 import BaseModal from './BaseModal.vue'
+import BaseImage from './BaseImage.vue'
 
 export default {
   name: 'BaseImageCard',
@@ -48,6 +42,7 @@ export default {
     }
   },
   components: {
+    BaseImage,
     BaseModal
   },
   data() {
@@ -62,34 +57,20 @@ export default {
     }
   },
   computed: {
-    loaderConfig() {
-      const { image } = this.$props
-      return {
-        src: FORMATTED_IMAGE_PREFIX + image,
-        loading: FORMATTED_SCALED200_LOW_QUALITY_IMAGE_PREFIX + image,
-        error: this.imageSrc,
-      }
-    },
     imageSrc() {
-      return FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX + this.$props.image
+      return this.$props.image
     }
   }
 }
 </script>
 
-<style lang='scss'>
-.componentContainer {
+<style lang='scss' scoped>
+.imageCard__container {
   display: flex;
-  flex: 1 1 150px ;
-  flex-direction: column;
+  flex: 1 1 40%;
   overflow: hidden;
   transition: all 1s ease-in-out;
-  &:hover {
-   flex-basis: 400px;
-    .wrapper__image {
-      filter: none;
-    }
-  }
+  height: 33%;
   @media screen and (max-width: 480px) {
     flex: 1 0 80%;
     &:hover {
@@ -97,21 +78,21 @@ export default {
     }
   }
 }
-.imageWrapper {
+.imageCard__imageWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  height: 400px;
+  width: 100%;
   position: relative;
   @media screen and (max-width: 480px) {
     width: 100%;
     height: fit-content;
   }
 }
-.wrapper__image {
-  height: 400px;
-  filter: grayscale(1);
+.imageCard__preview {
+  width: 100%;
+  height: auto;
   transition: filter 1s ease-in-out, opacity 0.4s ease-in-out;
   cursor: pointer;
   @media screen and (max-width: 480px) {
@@ -133,20 +114,7 @@ export default {
     }
   }
 }
-img[lazy=loading] {
-  filter: blur(8px);
-}
-img[lazy=loaded] {
-  animation: appear 0.5s ease;
-}
 
-@keyframes appear {
-  from {
-    filter: blur(8px);
-  }
-  to {
-    filter: blur(0);
-  }
-}
+
 
 </style>

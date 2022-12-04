@@ -19,9 +19,8 @@
       <div class='header__separator'/>
     </div>
     <div class="header__MessageContainer">
-      <h1 class="title">{{ title }}</h1>
       <h2 class="subtitle">{{ subtitle }}</h2>
-      <h2 class="secondSubtitle">{{secondSubtitle}}</h2>
+      <h1 class="title">{{ title }}</h1>
     </div>
     <a href='#about' class='header__goDownButton'>
       <img :src='arrowDown' alt='' class='networks__svg --noFilters'/>
@@ -38,9 +37,8 @@ import arrowDown from '@/assets/icons/arrowDown.svg'
 export default {
   data() {
     return {
-      title: 'Привет',
-      subtitle: 'Меня зовут Маша Мороз',
-      secondSubtitle: 'Я - твой будущий фотограф',
+      title: 'Зафиксировать вечность',
+      subtitle: 'Маша Мороз',
       vkIcon,
       insIcon,
       arrowDown,
@@ -49,15 +47,21 @@ export default {
 }
 </script>
 <style scoped lang='sass'>
+$padding: 40px
+$mobilePadding: 10px
+
 .headerContainer
   display: flex
-  padding: 40px
-  opacity: 0.8
+  padding: $padding
   color: #ffffff
   font-weight: 900
+  background-color: rgba(0, 0, 0, 0.55)
+  height: 100vh
+  justify-content: center
+  align-items: center
   @media screen and (max-width: 480px)
     font-weight: bold
-    padding: 30px
+    padding: 10px
 
 .header__centralBlock
   width: 100%
@@ -66,47 +70,19 @@ export default {
   align-items: center
 
 .header__MessageContainer
-  width: 100%
-  height: calc(100vh - 180px)
-  display: grid
-  grid-template-columns: 1fr
-  grid-template-rows: auto 30px auto 1fr
-  justify-content: flex-end
-  text-align: right
-
-  @media screen and (max-width: 480px)
-    grid-template-rows: 50% 10px 150px 150px
+  display: flex
+  flex-direction: column
+  text-align: center
 
 .title
-  font-size: 80px
-  grid-column: -1
-  grid-row: 1
+  font-size: 130px
   animation: photoAppear 0.8s forwards
   animation-delay: 0.8s
   opacity: 0
+  line-height: 1
   @media screen and (max-width: 480px)
     align-self: flex-end
-    font-size: 40px
-
-.subtitle
-  font-size: 80px
-  grid-row: 3
-  grid-column: -1
-  animation: photoAppear 0.8s forwards
-  animation-delay: 1.6s
-  opacity: 0
-  @media screen and (max-width: 480px)
-    font-size: 40px
-
-.secondSubtitle
-  font-size: 110px
-  grid-row: 4
-  grid-column: -1
-  animation: photoAppear 0.8s forwards
-  animation-delay: 2.4s
-  opacity: 0
-  @media screen and (max-width: 480px)
-    font-size: 40px
+    font-size: 60px
 
 @keyframes photoAppear
   from
@@ -115,12 +91,29 @@ export default {
   to
     opacity: 1
 
+.subtitle
+  font-size: 40px
+  animation: photoAppear 0.8s forwards
+  animation-delay: 1.6s
+  opacity: 0
+  @media screen and (max-width: 480px)
+    font-size: 30px
+
 .header__networks
   display: flex
   flex-direction: column
+  position: absolute
   height: calc(100vh - 80px)
   justify-content: space-around
   gap: 20px
+  z-index: 2
+  top: $padding
+  left: $padding
+
+  @media screen and (max-width: 480px)
+    top: $mobilePadding
+    left: $mobilePadding
+    height: calc(100vh - $mobilePadding - $mobilePadding)
 
 .header__separator
   width: 6px

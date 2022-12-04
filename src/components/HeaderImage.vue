@@ -47,6 +47,17 @@ export default {
   overflow: hidden;
   height: 100vh;
   z-index: -1;
+  animation: filter 6s ease;
+}
+
+@keyframes filter {
+  0% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(0);
+  }
+
 }
 .headerImage {
   width: 100vw;
