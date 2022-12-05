@@ -18,7 +18,7 @@ export default {
 
     width: 100vw
     height: 100vh
-    background-color: rgba(255, 255, 255, 0.37)
+    background-color: rgba(255, 255, 255, 0.9)
 
     display: flex
     justify-content: center

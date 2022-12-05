@@ -28,7 +28,7 @@ export const FORMATTED_LOW_QUALITY_BLURRED_IMAGE_PREFIX = BASE_URL
   + DIRECTORY
 
 export const HEADER_IMAGE = FORMATTED_IMAGE_PREFIX + 'space/PPAxH8GNOhY_lykacc.jpg'
-export const HEADER_IMAGE2 = FORMATTED_IMAGE_PREFIX + 'headerPictures2_c4cfhh.jpg'
+export const HEADER_IMAGE2 = FORMATTED_IMAGE_PREFIX + 'pQ15C-sGB2w_rdajce.jpg'
 
 export const ABOUT_PHOTO = FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX +'dZ3CskhtI0Y_zc8jnh.jpg'
 export const ABOUT_PHOTO2 = FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX + 'about_uhkdfq.png'
@@ -62,10 +62,10 @@ export const WORK_PHOTO = [
   {
     main: 'yforXyNfbZU_thl9c8.jpg',
     photos: [
-      'yforXyNfbZU_thl9c8.jpg',
       'rdcExsrxlQ8_yycyqn.jpg',
-      'fBe-6jlkGlU_eqzw1w.jpg',
       'WkRf4e8Tq5I_tpbkuu.jpg',
+      'yforXyNfbZU_thl9c8.jpg',
+      'fBe-6jlkGlU_eqzw1w.jpg',
       'OymMNm-FBnY_e0yptw.jpg',
     ],
     prefix: 'melon/',

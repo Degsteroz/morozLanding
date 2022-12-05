@@ -167,6 +167,6 @@ $mobilePadding: 10px
     width: 180px
 
   @media screen and (max-width: 480px)
-    bottom: 20px
+    bottom: 10%
 
 </style>

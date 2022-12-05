@@ -19,11 +19,6 @@
           :image='image'
           class='wrapper__image__fullSize'
         />
-
-        <BaseImage
-          :image='image'
-          class='wrapper__image__fullSize mobile'
-        />
       </BaseModal>
     </div>
   </div>
@@ -72,10 +67,7 @@ export default {
   transition: all 1s ease-in-out;
   height: 33%;
   @media screen and (max-width: 480px) {
-    flex: 1 0 80%;
-    &:hover {
-      flex-basis: 80%;
-    }
+    flex: 1 1 40%;
   }
 }
 .imageCard__imageWrapper {
@@ -87,7 +79,6 @@ export default {
   position: relative;
   @media screen and (max-width: 480px) {
     width: 100%;
-    height: fit-content;
   }
 }
 .imageCard__preview {
@@ -96,22 +87,16 @@ export default {
   transition: filter 1s ease-in-out, opacity 0.4s ease-in-out;
   cursor: pointer;
   @media screen and (max-width: 480px) {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
   }
 }
 .wrapper__image__fullSize {
   height: calc(100vh - 50px);
   @media screen and (max-width: 480px) {
-    display: none;
-  }
-  &.mobile {
-    display: none;
-    @media screen and (max-width: 480px) {
-      display: flex;
-      height: auto;
-      width: 100vw;
-    }
+    display: flex;
+    height: auto;
+    width: calc(100vw - 40px);
   }
 }
 

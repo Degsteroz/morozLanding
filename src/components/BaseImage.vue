@@ -47,4 +47,10 @@ img[lazy=loaded] {
     filter: blur(0);
   }
 }
+@media screen and (max-width: 480px) {
+  img[lazy=loaded] {
+    width: 100%;
+    height: auto;
+  }
+}
 </style>

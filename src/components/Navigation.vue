@@ -19,19 +19,23 @@ export default {
     return {
       links: [
         {
-          title: 'Home',
+          title: 'Домой',
           href: '#home'
         },
         {
-          title: 'About',
+          title: 'Обо мне',
           href: '#about'
         },
         {
-          title: 'My works',
+          title: 'Примеры работ',
           href: '#works'
         },
         {
-          title: 'Contacts',
+          title: 'Прайс',
+          href: '#price'
+        },
+        {
+          title: 'Контакты',
           href: '#contacts'
         },
       ]
@@ -52,12 +56,17 @@ export default {
   top: 0
   z-index: 10
   justify-content: center
+  @media screen and (max-width: 480px)
+    height: 58px
+    align-items: center
 
 .navigation__link
   color: var(--white)
   font-size: 30px
   font-weight: 700
   transition: color 0.3s ease-in-out
+  @media screen and (max-width: 480px)
+    font-size: 15px
 
   &:hover
     color: #e19533

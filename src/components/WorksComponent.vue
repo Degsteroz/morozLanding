@@ -107,6 +107,10 @@ export default {
   display: flex
   padding: 10px
   overflow: hidden
+  @media screen and (max-width: 480px)
+    flex-direction: column
+    height: auto
+
 
 .worksContainer__content__mobile
   display: none

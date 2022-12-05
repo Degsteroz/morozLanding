@@ -19,6 +19,9 @@
       @scroll.prevent
     >
       <div class='album__photosWrapper'>
+        <div class='backButtonContainer'>
+          <img :src='arrowDown' class='arrow__svg'/>
+        </div>
         <BaseImageCard
           :image='photo'
           v-for='photo in photosIds'
@@ -34,9 +37,15 @@ import BaseImageCard from './BaseImageCard.vue'
 import BaseModal from './BaseModal.vue'
 import BaseImage from './BaseImage.vue'
 
+import arrowDown from '@/assets/icons/arrowDown.svg'
+
 export default {
   name: 'AlbumComponent',
-  components: { BaseImage, BaseImageCard, BaseModal },
+  components: {
+    BaseImage,
+    BaseImageCard,
+    BaseModal,
+  },
   props: {
     album: {
       type: Object,
@@ -52,6 +61,7 @@ export default {
 
   data() {
     return {
+      arrowDown,
       showModal: false,
     }
   },
@@ -79,9 +89,10 @@ export default {
     flex-basis: 300px;
   }
   @media screen and (max-width: 480px) {
-    flex: 1 0 80%;
+    height: 100px;
+    width: 100%;
     &:hover {
-      flex-basis: 80%;
+      flex-basis: 100px;
     }
   }
 }
@@ -93,10 +104,11 @@ export default {
   height: 400px;
   position: relative;
   @media screen and (max-width: 480px) {
+    flex: 1 1 100%;
     width: 100%;
-    height: fit-content;
   }
 }
+
 .album__photosWrapper {
   width: calc(100vw - 20px);
   height: 100%;
@@ -106,6 +118,30 @@ export default {
   padding: 10px;
   justify-content: center;
   gap: 5px;
+  @media screen and (max-width: 480px) {
+    flex-wrap: wrap;
+  }
+}
+
+.backButtonContainer {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  left: 0;
+  z-index: 10;
+
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+
+  opacity: 0.8;
+  background-color: #000000;
+}
+.arrow__svg {
+  width: 40px;
+  height: 40px;
+  filter: invert(1);
+  transform: rotate(90deg);
 }
 
 </style>
