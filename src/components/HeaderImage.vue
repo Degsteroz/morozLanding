@@ -6,10 +6,22 @@
       class="headerImage"
       alt="header picture"
     />
+
+    <img
+      loading="lazy"
+      :src="mobileImageArray[imageIndex]"
+      class="headerImage mobile"
+      alt="header picture"
+    />
   </div>
 </template>
 <script>
-import { HEADER_IMAGE, HEADER_IMAGE2 } from '@/pageData'
+import {
+  HEADER_IMAGE,
+  HEADER_IMAGE2,
+  MOBILE_HEADER_IMAGE,
+  MOBILE_HEADER_IMAGE2,
+} from '@/pageData'
 export default {
   name: 'HeaderImage',
   mounted() {
@@ -29,6 +41,10 @@ export default {
       imageArray: [
         HEADER_IMAGE,
         HEADER_IMAGE2,
+      ],
+      mobileImageArray: [
+        MOBILE_HEADER_IMAGE,
+        MOBILE_HEADER_IMAGE2,
       ]
     }
   },
@@ -39,39 +55,36 @@ export default {
   }
 }
 </script>
-<style>
-.headerImageContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  height: 100vh;
-  z-index: -1;
-  animation: filter 6s ease;
-}
+<style lang='sass'>
+.headerImageContainer
+  position: fixed
+  top: 0
+  left: 0
+  overflow: hidden
+  height: 100vh
+  z-index: -1
+  animation: filter 6s ease
+  @media screen and (max-width: 480px)
+    display: flex
+    width: 100vw
+    justify-content: center
 
-@keyframes filter {
-  0% {
-    filter: blur(5px);
-  }
-  100% {
-    filter: blur(0);
-  }
+@keyframes filter
+  0%
+    filter: blur(5px)
+  100%
+    filter: blur(0)
 
-}
-.headerImage {
-  width: 100vw;
-}
-@media screen and (max-width: 480px) {
-  .headerImageContainer {
-    display: flex;
-    width: 100vw;
-    justify-content: center;
-  }
-  .headerImage {
-    height: 100%;
-    width: auto;
-    filter: brightness(0.5);
-  }
-}
+.headerImage
+  width: 100vw
+  @media screen and (max-width: 480px)
+    display: none
+
+  &.mobile
+    display: none
+    @media screen and (max-width: 480px)
+      display: flex
+      height: 100%
+      width: auto
+      filter: brightness(0.5)
 </style>

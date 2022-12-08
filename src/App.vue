@@ -6,6 +6,7 @@
   <WorksComponent/>
   <PriceComponent/>
   <ContactComponent/>
+  <FooterComponent/>
 </template>
 
 <script setup>
@@ -16,6 +17,8 @@ import AboutComponent from './components/AboutComponent.vue'
 import WorksComponent from './components/WorksComponent.vue'
 import PriceComponent from './components/PriceComponent.vue'
 import ContactComponent from './components/ContactsComponent.vue'
+import FooterComponent from './components/FooterComponent.vue'
+
 </script>
 
 <style scoped>

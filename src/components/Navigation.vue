@@ -58,6 +58,7 @@ export default {
   justify-content: center
   @media screen and (max-width: 480px)
     height: 58px
+    padding: 0 10px
     align-items: center
 
 .navigation__link
@@ -66,8 +67,8 @@ export default {
   font-weight: 700
   transition: color 0.3s ease-in-out
   @media screen and (max-width: 480px)
-    font-size: 15px
-
+    font-size: 14px
+    text-align: center
   &:hover
     color: #e19533
 

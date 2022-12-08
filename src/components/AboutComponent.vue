@@ -133,6 +133,7 @@ const mobileParagraphs = [
   @media screen and (max-width: 480px)
     width: 100px
     height: 100px
+    border-radius: 50%
 
 
 .about__image
@@ -151,7 +152,7 @@ const mobileParagraphs = [
   @media screen and (max-width: 480px)
     width: 80%
     gap: 20px
-    padding-left: 20px
+    padding: 0 0 0 15px
 
 .about__textContainer
   display: flex

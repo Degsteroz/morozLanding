@@ -11,9 +11,9 @@
 
       <div class='linkContainer'>
         <a href='https://instagram.com/muamarvel/' target='_blank'>
-          <img :src='insIcon' class='networks__svg' alt/>
+          <img :src='telegram' class='networks__svg' alt/>
         </a>
-        <div>Moй Instagram</div>
+        <div>Moй Telegram</div>
       </div>
 
       <div class='header__separator'/>
@@ -31,7 +31,7 @@
 
 <script>
 import vkIcon from '@/assets/icons/vk.svg'
-import insIcon from '@/assets/icons/instagram.svg'
+import telegram from '@/assets/icons/telegram.svg'
 import arrowDown from '@/assets/icons/arrowDown.svg'
 
 export default {
@@ -40,7 +40,7 @@ export default {
       title: 'Зафиксировать вечность',
       subtitle: 'Маша Мороз',
       vkIcon,
-      insIcon,
+      telegram,
       arrowDown,
     }
   }
