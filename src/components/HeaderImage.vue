@@ -4,6 +4,7 @@
       loading="lazy"
       :src="imageArray[imageIndex]"
       class="headerImage"
+      :class="{'--blur': imageIndex}"
       alt="header picture"
     />
 
@@ -77,6 +78,11 @@ export default {
 
 .headerImage
   width: 100vw
+  filter: brightness(0.6)
+
+  &.--blur
+    filter: brightness(1) blur(3px)
+
   @media screen and (max-width: 480px)
     display: none
 

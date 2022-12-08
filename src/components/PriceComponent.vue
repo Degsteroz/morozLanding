@@ -88,7 +88,6 @@ $border: 1px solid rgba(255, 255, 255, 0.15)
   justify-content: center
   color: #ffffff
   height: 100vh
-  background-color: rgba(0, 0, 0, 0.61)
   line-height: 1.2
   @media screen and (max-width: 480px)
     line-height: 1
@@ -115,7 +114,7 @@ $border: 1px solid rgba(255, 255, 255, 0.15)
   font-size: 30px
   padding: 10px
   text-align: center
-  background-color: rgba(0, 0, 0, 0.76)
+  background-color: rgba(0, 0, 0, 0.56)
   @media screen and (max-width: 480px)
     font-size: 24px
     border: none

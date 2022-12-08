@@ -55,7 +55,6 @@ $mobilePadding: 10px
   padding: $padding
   color: #ffffff
   font-weight: 900
-  background-color: rgba(0, 0, 0, 0.55)
   height: 100vh
   justify-content: center
   align-items: center
