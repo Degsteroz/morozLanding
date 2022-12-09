@@ -81,7 +81,7 @@ export default {
   filter: brightness(0.6)
 
   &.--blur
-    filter: brightness(1) blur(3px)
+    filter: brightness(1) blur(2px)
 
   @media screen and (max-width: 480px)
     display: none

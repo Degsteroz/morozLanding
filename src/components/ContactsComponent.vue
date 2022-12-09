@@ -59,20 +59,20 @@ export default {
 </script>
 
 <style scoped lang='sass'>
-$url: 'https://res.cloudinary.com/dtecpsig5/image/upload/f_webp/e_grayscale/moroz/'
+$url: 'https://res.cloudinary.com/dtecpsig5/image/upload/f_webp/moroz/'
 $id: 'b0M8C0y46Ek_kbjoir.jpg'
 
 $fontColor: white
 
 .contactComponent
   width: 100%
-  height: calc(100vh - 63px - 68px)
+  height: 70vh
 
   background-image: url($url + $id)
   background-repeat: no-repeat
   background-attachment: fixed
-  background-size: 100%
-  background-position: bottom
+  background-size: 150%
+  background-position: 100% 55%
   line-height: 1
   @media screen and (max-width: 480px)
     background-size: 350%
@@ -92,9 +92,9 @@ $fontColor: white
 
 .contactContent
   width: min(1200px, 60%)
+  display: flex
+  flex-direction: column
   @media screen and (max-width: 480px)
-    display: flex
-    flex-direction: column
     width: 100%
 
 h2
@@ -111,10 +111,11 @@ h2
 
 .contactLinksContainer
   display: flex
-  justify-content: space-around
+  align-items: center
+  flex-direction: column
+  margin-top: 50px
   @media screen and (max-width: 480px)
     margin-top: auto
-    flex-direction: column
     gap: 20px
 
 .contactLink
