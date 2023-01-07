@@ -143,6 +143,10 @@ export default {
   align-self: baseline;
   @media screen and (max-width: 480px) {
     flex-wrap: wrap;
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    flex-direction: column;
   }
 }
 

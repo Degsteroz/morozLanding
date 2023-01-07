@@ -67,8 +67,10 @@ export default {
   object-fit: cover;
   transition: all 1s ease-in-out;
   @media screen and (max-width: 480px) {
-    flex: 1 1 100%;
-    height: auto;
+    flex: 0 0 auto;
+    height: fit-content;
+    max-height: 251px;
+    width: 70%;
   }
 }
 .imageCard__imageWrapper {
