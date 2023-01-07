@@ -101,7 +101,7 @@ const mobileParagraphs = [
   background: linear-gradient(147deg, rgba(1,24,29,1) 0%, rgba(0,1,3,1) 92%)
   color: var(--white)
 
-  padding: 20px 0
+  padding: 40px 0
 
 .about__title
   font-size: 70px

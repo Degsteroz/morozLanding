@@ -11,9 +11,6 @@
       />
       <BaseModal
         v-if='showModal'
-        @wheel.prevent
-        @touchmove.prevent
-        @scroll.prevent
       >
         <BaseImage
           :image='image'
@@ -62,12 +59,14 @@ export default {
 <style lang='scss' scoped>
 .imageCard__container {
   display: flex;
-  flex: 1 1 40%;
-  overflow: hidden;
+  flex: 0 0 10%;
+  height: 345px;
+  justify-content: space-between;
+  object-fit: cover;
   transition: all 1s ease-in-out;
-  height: 33%;
   @media screen and (max-width: 480px) {
-    flex: 1 1 40%;
+    flex: 1 1 100%;
+    height: auto;
   }
 }
 .imageCard__imageWrapper {
@@ -75,20 +74,18 @@ export default {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  width: 100%;
   position: relative;
+  border-radius: 10px;
   @media screen and (max-width: 480px) {
     width: 100%;
   }
 }
 .imageCard__preview {
-  width: 100%;
-  height: auto;
   transition: filter 1s ease-in-out, opacity 0.4s ease-in-out;
   cursor: pointer;
   @media screen and (max-width: 480px) {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
   }
 }
 .wrapper__image__fullSize {
@@ -99,7 +96,4 @@ export default {
     width: calc(100vw - 40px);
   }
 }
-
-
-
 </style>

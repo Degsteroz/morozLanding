@@ -13,11 +13,11 @@
     <div class='work__header'>Мои работы</div>
 
     <div class='worksContainer__content'>
-      <AlbumComponent
-        :album='album'
-        :key='album.main'
-        v-for='album in albumsArray'
-        @mouseenter='() => changeBackgroundImage(album)'
+      <BaseAlbumsDirectory
+        :directory='directory'
+        v-for='directory in workTypes'
+        :key='directory.id'
+        @mouseenter='changeBackgroundImage(directory)'
       />
     </div>
     <div class='navigationAnker' id='works'/>
@@ -25,25 +25,25 @@
 </template>
 
 <script>
-import AlbumComponent from '@/components/AlbumComponent.vue'
+import BaseAlbumsDirectory from '@/components/BaseAlbumsDirectory.vue'
 import {
-  WORK_PHOTO,
+  WORKS_TYPES,
   WORK_BACKGROUND,
   FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX
 } from '@/pageData'
 
 export default {
   name: 'WorksComponent',
-  components: { AlbumComponent },
+  components: { BaseAlbumsDirectory },
   data() {
     return {
       background: WORK_BACKGROUND,
-      albumsArray: WORK_PHOTO
+      workTypes: WORKS_TYPES
     }
   },
   methods: {
-    changeBackgroundImage(image) {
-      this.background =  image.prefix + image.main
+    changeBackgroundImage(album) {
+      this.background = album.cover
     }
   },
   computed: {
@@ -59,10 +59,10 @@ export default {
   display: flex
   flex-direction: column
   width: 100%
-  height: calc(100vh - 50px)
+  min-height: calc(100vh - 50px)
   padding: 10px 0
   color: #222222
-  font-size: 40px
+  font-size: 70px
   justify-content: center
   align-items: center
   overflow: hidden
@@ -81,9 +81,11 @@ export default {
   opacity: 0
 
 .slide-fade-leave-active
-  opacity: 0
+  opacity: 1
 
-.slide-fade-enter,
+.slide-fade-enter
+  opacity: 1
+
 .slide-fade-leave-to
   opacity: 0
 
@@ -91,22 +93,24 @@ export default {
   width: 100vw
   filter: brightness(0.4)
   -webkit-transition: all 3s ease
-  transition: all 0.5s ease
+  transition: all 0.3s ease
   z-index: -1
   @media screen and (max-width: 480px)
     width: auto
     height: 100vh
 
 .work__header
-  font-size: 50px
+  font-size: 70px
   color: var(--white)
 
 .worksContainer__content
   width: calc(100vw - 20px)
   height: fit-content
+  justify-content: center
   display: flex
   padding: 10px
-  overflow: hidden
+  gap: 10px
+  flex-wrap: wrap
   @media screen and (max-width: 480px)
     flex-direction: column
     height: auto

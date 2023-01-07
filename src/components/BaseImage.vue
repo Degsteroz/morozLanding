@@ -7,7 +7,7 @@
 <script>
 import {
   FORMATTED_SCALED200_LOW_QUALITY_IMAGE_PREFIX,
-  FORMATTED_IMAGE_PREFIX,
+  FORMATTED_SCALED1000_IMAGE_PREFIX,
 } from '@/pageData'
 
 export default {
@@ -21,9 +21,8 @@ export default {
     loaderConfig() {
       const { image } = this.$props
       return {
-        src: FORMATTED_IMAGE_PREFIX + image,
+        src: FORMATTED_SCALED1000_IMAGE_PREFIX + image,
         loading: FORMATTED_SCALED200_LOW_QUALITY_IMAGE_PREFIX + image,
-        error: this.imageSrc,
       }
     },
   }
@@ -33,6 +32,7 @@ export default {
 <style>
 img[lazy=loading] {
   filter: blur(8px);
+  height: 100%;
 }
 img[lazy=loaded] {
   animation: appear 0.5s ease;

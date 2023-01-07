@@ -100,7 +100,7 @@ $fontColor: white
 h2
   margin: 0 auto 20px
   width: fit-content
-  font-size: 60px
+  font-size: 70px
 
 .contactDescription
   font-size: 30px
@@ -122,10 +122,10 @@ h2
   display: flex
   align-items: center
   color: $fontColor
-  font-size: 60px
+  font-size: 30px
   cursor: pointer
   @media screen and (max-width: 480px)
-    font-size: 80px
+    font-size: 40px
 
 .contactIcon
   width: 50px

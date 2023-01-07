@@ -10,17 +10,22 @@
         class='wrapper__image'
         alt='My work preview'
       />
+      <div class='album__statisticContainer'>
+        <div class='statistic__title'>
+          Количество фото в альбоме:
+        </div>
+      <div class='statistic__count'>
+        {{photoCount}}
+      </div>
+      </div>
     </div>
 
     <BaseModal
       v-if='showModal'
-      @wheel.prevent
-      @touchmove.prevent
-      @scroll.prevent
     >
       <div class='album__photosWrapper'>
         <div class='backButtonContainer'>
-          <img :src='arrowDown' class='arrow__svg'/>
+          <img :src='arrowDown' class='arrow__svg' alt='back button'/>
         </div>
         <BaseImageCard
           :image='photo'
@@ -73,6 +78,9 @@ export default {
     imageSrc() {
       const {prefix, main} = this.$props.album
       return prefix + main
+    },
+    photoCount() {
+      return this.$props.album.photos.length
     }
   }
 }
@@ -80,16 +88,12 @@ export default {
 <style lang='scss' scoped>
 .albumContainer {
   display: flex;
-  flex: 1 1 100px;
+  flex: 1 1 300px;
   flex-direction: column;
   max-width: fit-content;
   overflow: hidden;
   transition: all 1s ease;
-  &:hover {
-    flex-basis: 300px;
-  }
   @media screen and (max-width: 480px) {
-    height: 100px;
     width: 100%;
     &:hover {
       flex-basis: 100px;
@@ -105,8 +109,30 @@ export default {
   position: relative;
   @media screen and (max-width: 480px) {
     flex: 1 1 100%;
-    width: 100%;
+    height: 100%;
   }
+}
+
+.album__statisticContainer {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100px;
+  height: 100%;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.statistic__title {
+  font-size: 26px;
+  text-align: center;
+}
+.statistic__count {
+  font-size: 52px;
+  text-align: center;
 }
 
 .album__photosWrapper {
@@ -136,6 +162,9 @@ export default {
 
   opacity: 0.8;
   background-color: #000000;
+  @media screen and (max-width: 480px) {
+    position: fixed;
+  }
 }
 .arrow__svg {
   width: 40px;

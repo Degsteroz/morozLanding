@@ -87,7 +87,7 @@ $border: 1px solid rgba(255, 255, 255, 0.15)
   align-items: center
   justify-content: center
   color: #ffffff
-  height: 100vh
+  height: auto
   line-height: 1.2
   @media screen and (max-width: 480px)
     line-height: 1
@@ -102,7 +102,7 @@ $border: 1px solid rgba(255, 255, 255, 0.15)
     width: 100%
 
 .price__title
-  font-size: 100px
+  font-size: 70px
   @media screen and (max-width: 480px)
     font-size: 40px
 
@@ -112,12 +112,13 @@ $border: 1px solid rgba(255, 255, 255, 0.15)
   border-radius: 10px
   border: $border
   font-size: 30px
-  padding: 10px
+  padding: 40px
   text-align: center
   background-color: rgba(0, 0, 0, 0.56)
   @media screen and (max-width: 480px)
     font-size: 24px
     border: none
+    padding: 20px 10px
 
 .price__firstParagraph
   margin-bottom: 20px
