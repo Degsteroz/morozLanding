@@ -69,8 +69,8 @@ export default {
   @media screen and (max-width: 480px) {
     flex: 0 0 auto;
     height: fit-content;
-    max-height: 251px;
-    width: 70%;
+    max-height: 264px;
+    width: 52%;
   }
 }
 .imageCard__imageWrapper {
