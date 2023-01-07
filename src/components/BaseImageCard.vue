@@ -45,6 +45,7 @@ export default {
   methods: {
     changeModalStateView(e) {
       e.stopPropagation()
+      e.preventDefault()
       this.showModal = !this.showModal
     }
   },
@@ -61,6 +62,7 @@ export default {
   display: flex;
   flex: 0 0 10%;
   height: 345px;
+  max-width: 470px;
   justify-content: space-between;
   object-fit: cover;
   transition: all 1s ease-in-out;

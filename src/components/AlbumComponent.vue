@@ -9,6 +9,7 @@
         :image='imageSrc'
         class='wrapper__image'
         alt='My work preview'
+        v-if='!showModal'
       />
       <div class='album__statisticContainer'>
         <div class='statistic__title'>
@@ -95,9 +96,6 @@ export default {
   transition: all 1s ease;
   @media screen and (max-width: 480px) {
     width: 100%;
-    &:hover {
-      flex-basis: 100px;
-    }
   }
 }
 .album__previewWrapper {
@@ -136,14 +134,13 @@ export default {
 }
 
 .album__photosWrapper {
-  width: calc(100vw - 20px);
-  height: 100%;
   flex-wrap: wrap;
   display: flex;
   flex-direction: row;
   padding: 10px;
   justify-content: center;
   gap: 5px;
+  align-self: baseline;
   @media screen and (max-width: 480px) {
     flex-wrap: wrap;
   }
