@@ -104,7 +104,7 @@ $border: 1px solid rgba(255, 255, 255, 0.15)
 .price__title
   font-size: 70px
   @media screen and (max-width: 480px)
-    font-size: 40px
+    margin-bottom: 10px
 
 .price__descriptionContainer
   border: 1px solid var(--white)

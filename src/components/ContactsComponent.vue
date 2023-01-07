@@ -101,6 +101,8 @@ h2
   margin: 0 auto 20px
   width: fit-content
   font-size: 70px
+  @media screen and (max-width: 480px)
+    text-align: center
 
 .contactDescription
   font-size: 30px
