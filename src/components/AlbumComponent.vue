@@ -11,35 +11,35 @@
         alt='My work preview'
         v-if='!showModal'
       />
+
       <div class='album__statisticContainer'>
         <div class='statistic__title'>
           Количество фото в альбоме:
         </div>
-      <div class='statistic__count'>
-        {{photoCount}}
-      </div>
+
+        <div class='statistic__count'>
+          {{photoCount}}
+        </div>
       </div>
     </div>
 
-    <BaseModal
-      v-if='showModal'
-    >
+    <BaseModal v-if='showModal'>
       <div class='album__photosWrapper'>
         <div class='backButtonContainer'>
-          <img :src='arrowDown' class='arrow__svg' alt='back button'/>
+          <img
+            :src='arrowDown'
+            class='arrow__svg'
+            alt='back button'
+          />
         </div>
-        <BaseImageCard
-          :image='photo'
-          v-for='photo in photosIds'
-          :key='photo'
-        />
-      </div>
 
+        <AlbumViewer :photos='photosIds' />
+      </div>
     </BaseModal>
   </div>
 </template>
 <script>
-import BaseImageCard from './BaseImageCard.vue'
+import AlbumViewer from './AlbumViewer.vue'
 import BaseModal from './BaseModal.vue'
 import BaseImage from './BaseImage.vue'
 
@@ -49,7 +49,7 @@ export default {
   name: 'AlbumComponent',
   components: {
     BaseImage,
-    BaseImageCard,
+    AlbumViewer,
     BaseModal,
   },
   props: {
@@ -134,11 +134,10 @@ export default {
 }
 
 .album__photosWrapper {
-  flex-wrap: wrap;
   display: flex;
   flex-direction: row;
+  width: 100%;
   padding: 10px;
-  justify-content: center;
   gap: 5px;
   align-self: baseline;
   @media screen and (max-width: 480px) {
@@ -151,7 +150,7 @@ export default {
 }
 
 .backButtonContainer {
-  position: absolute;
+  position: fixed;
   display: flex;
   top: 10px;
   left: 0;
@@ -163,9 +162,6 @@ export default {
 
   opacity: 0.8;
   background-color: #000000;
-  @media screen and (max-width: 480px) {
-    position: fixed;
-  }
 }
 .arrow__svg {
   width: 40px;

@@ -61,16 +61,12 @@ export default {
 .imageCard__container {
   display: flex;
   flex: 0 0 10%;
-  height: 345px;
-  max-width: 470px;
-  justify-content: space-between;
-  object-fit: cover;
   transition: all 1s ease-in-out;
+  justify-content: center;
   @media screen and (max-width: 480px) {
     flex: 0 0 auto;
     height: fit-content;
-    max-height: 264px;
-    width: 52%;
+    width: 100%;
   }
 }
 .imageCard__imageWrapper {
@@ -97,7 +93,7 @@ export default {
   @media screen and (max-width: 480px) {
     display: flex;
     height: auto;
-    width: calc(100vw - 40px);
+    width: calc(100vw - 10px);
   }
 }
 </style>

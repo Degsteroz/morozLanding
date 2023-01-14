@@ -2,7 +2,7 @@ import albums from './albums.json'
 
 const BASE_URL = 'https://res.cloudinary.com/dtecpsig5/image/upload/f_webp/'
 const CONFIG = {
-  scale100: 'c_scale,w_100/',
+  scale300: 'c_scale,w_300/',
   scale700: 'c_scale,w_700/',
   scale1000: 'c_scale,w_1000/',
   lowQuality: 'q_50/',
@@ -18,7 +18,7 @@ export const FORMATTED_SCALED700_LOW_QUALITY_IMAGE_PREFIX = BASE_URL
   + DIRECTORY
 
 export const FORMATTED_SCALED200_LOW_QUALITY_IMAGE_PREFIX = BASE_URL
-  + CONFIG.scale100
+  + CONFIG.scale300
   + CONFIG.lowQuality
   + DIRECTORY
 export const FORMATTED_SCALED1000_IMAGE_PREFIX = BASE_URL + CONFIG.scale1000 + DIRECTORY
