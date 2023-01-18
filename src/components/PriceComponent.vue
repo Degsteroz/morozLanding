@@ -114,7 +114,7 @@ $border: 1px solid rgba(255, 255, 255, 0.15)
   font-size: 30px
   padding: 40px
   text-align: center
-  background-color: rgba(0, 0, 0, 0.56)
+  background-color: rgba(0, 0, 0, 0.65)
   @media screen and (max-width: 480px)
     font-size: 24px
     border: none

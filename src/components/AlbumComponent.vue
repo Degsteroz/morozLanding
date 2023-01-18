@@ -98,6 +98,7 @@ export default {
     width: 100%;
   }
 }
+
 .album__previewWrapper {
   display: flex;
   align-items: center;
@@ -128,6 +129,7 @@ export default {
   font-size: 26px;
   text-align: center;
 }
+
 .statistic__count {
   font-size: 52px;
   text-align: center;
@@ -163,6 +165,7 @@ export default {
   opacity: 0.8;
   background-color: #000000;
 }
+
 .arrow__svg {
   width: 40px;
   height: 40px;

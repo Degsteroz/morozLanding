@@ -60,19 +60,19 @@ export default {
 
 <style scoped lang='sass'>
 $url: 'https://res.cloudinary.com/dtecpsig5/image/upload/f_webp/moroz/'
-$id: 'b0M8C0y46Ek_kbjoir.jpg'
+$id: '2023-01-17_20.29.30_biuqso'
 
 $fontColor: white
 
 .contactComponent
   width: 100%
-  height: 70vh
+  height: calc(100vh - 63px - 73px)
 
   background-image: url($url + $id)
   background-repeat: no-repeat
   background-attachment: fixed
-  background-size: 150%
-  background-position: 100% 55%
+  background-size: 100%
+  background-position: 0 30%
   line-height: 1
   @media screen and (max-width: 480px)
     background-size: 350%

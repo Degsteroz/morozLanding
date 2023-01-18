@@ -39,6 +39,11 @@ const { id } = route.params
 const albums = ALBUMS[id]
 const { name } = WORKS_TYPES.find(type => type.id === id)
 
+window.scroll({
+  top: 0,
+  behavior: 'smooth'
+})
+
 function goBack() {
   router.back()
 }
@@ -53,7 +58,7 @@ function goBack() {
   display: flex
   flex-direction: column
   min-height: 100vh
-  background-color: rgba(0, 0, 0, 0.49)
+  background-color: rgb(39, 43, 94)
 
 header
   display: grid
