@@ -244,7 +244,7 @@ export default {
 
 .swipeIcon
   position: absolute
-  top: 50%
+  top: -50%
   width: 90px
   filter: invert(1)
   opacity: 0
@@ -253,11 +253,14 @@ export default {
 
   @keyframes swipe
     0%
+      top: 50%
       margin-left: -100px
       opacity: 0
     50%
+      top: 50%
       opacity: 1
     100%
+      top: 50%
       margin-left: 100px
       opacity: 0
 
