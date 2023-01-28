@@ -49,19 +49,19 @@ export const WORKS_TYPES = [
   },
   {
     cover: 'couple/Обложка_y6rqma',
-    name: 'Couples',
+    name: 'Парная',
     description: 'Парные фотографии',
     id: 'couple'
   },
   {
     cover: 'individual/Обложка_m2gkya',
-    name: 'Individual',
+    name: 'Индивидуальная',
     description: 'Индивидуальные фотографии',
     id: 'individual'
   },
   {
     cover: 'report/Обложка_tjv12i',
-    name: 'Report',
+    name: 'Репортаж',
     description: 'Репортажная съёмка',
     id: 'report'
   },
