@@ -13,12 +13,8 @@
       />
 
       <div class='album__statisticContainer'>
-        <div class='statistic__title'>
-          Количество фото в альбоме:
-        </div>
-
         <div class='statistic__count'>
-          {{photoCount}}
+          {{albumName}}
         </div>
       </div>
     </div>
@@ -80,8 +76,8 @@ export default {
       const {prefix, main} = this.$props.album
       return prefix + main
     },
-    photoCount() {
-      return this.$props.album.photos.length
+    albumName() {
+      return this.$props.album.name
     }
   }
 }
@@ -114,13 +110,13 @@ export default {
 
 .album__statisticContainer {
   position: absolute;
-  left: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.8);
-  width: 100px;
-  height: 100%;
+  width: 100%;
+  height: 70px;
   padding: 5px;
   font-weight: bold;
 }
@@ -131,7 +127,7 @@ export default {
 }
 
 .statistic__count {
-  font-size: 52px;
+  font-size: 32px;
   text-align: center;
 }
 

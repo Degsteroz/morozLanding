@@ -42,15 +42,27 @@ export const WORK_BACKGROUND = 'KiberKitsune/XAOqDUeNaC8_nrrpol.jpg'
 export const ALBUMS = albums
 export const WORKS_TYPES = [
   {
-    cover: 'KiberKitsune/XAOqDUeNaC8_nrrpol.jpg',
+    cover: 'sensitive/Обложка_cgbelf',
     name: 'Sensitive',
     description: 'Чувственные фотографии',
     id: 'sensitive'
   },
   {
-    cover: '12_rsrqmb',
+    cover: 'couple/Обложка_y6rqma',
     name: 'Couples',
     description: 'Парные фотографии',
     id: 'couple'
+  },
+  {
+    cover: 'individual/Обложка_m2gkya',
+    name: 'Individual',
+    description: 'Индивидуальные фотографии',
+    id: 'individual'
+  },
+  {
+    cover: 'report/Обложка_tjv12i',
+    name: 'Report',
+    description: 'Репортажная съёмка',
+    id: 'report'
   },
 ]

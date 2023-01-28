@@ -60,7 +60,7 @@ export default {
 <style lang='scss' scoped>
 .imageCard__container {
   display: flex;
-  flex: 0 0 10%;
+  flex: 1 1 100%;
   transition: all 1s ease-in-out;
   justify-content: center;
   @media screen and (max-width: 480px) {
@@ -73,6 +73,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   overflow: hidden;
   position: relative;
   border-radius: 10px;

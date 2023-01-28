@@ -2,6 +2,7 @@
   <img
     v-lazy="loaderConfig"
     alt='My work full size'
+    src=''
   />
 </template>
 <script>
@@ -51,6 +52,7 @@ img[lazy=loaded] {
   img[lazy=loaded] {
     width: 100%;
     height: auto;
+    max-height: none;
   }
 }
 </style>
