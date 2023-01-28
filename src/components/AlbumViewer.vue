@@ -264,6 +264,9 @@ export default {
       margin-left: 100px
       opacity: 0
 
+  @media screen and (min-width: 1200px)
+    display: none
+
 .photoPreview
   display: flex
   width: 100%
