@@ -72,6 +72,8 @@ $mobilePadding: 10px
   display: flex
   flex-direction: column
   text-align: center
+  @media screen and (max-width: 480px)
+    width: 285px
 
 .title
   font-size: 130px
