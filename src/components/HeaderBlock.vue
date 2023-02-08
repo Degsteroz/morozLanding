@@ -10,7 +10,7 @@
       </div>
 
       <div class='linkContainer'>
-        <a href='https://instagram.com/muamarvel/' target='_blank'>
+        <a href='https://t.me/marvelsan' target='_blank'>
           <img :src='telegram' class='networks__svg' alt/>
         </a>
         <div>Moй Telegram</div>
@@ -81,6 +81,7 @@ $mobilePadding: 10px
   animation-delay: 0.8s
   opacity: 0
   line-height: 1
+
   @media screen and (max-width: 480px)
     align-self: flex-end
     font-size: 60px
